@@ -27,14 +27,16 @@ public class PosterManager {
     }
 
     public String[] findLast() {
+        int newLimit;
         if (allMovies.length < limit) {
-            limit = allMovies.length;
+            newLimit = allMovies.length;
+        } else {
+            newLimit = limit;
         }
-        String[] tmp = new String[limit];
-        for (int i = 0; i < limit; i++) {
-            tmp[i] = allMovies[allMovies.length - 1 - i];
+            String[] tmp = new String[newLimit];
+            for (int i = 0; i < newLimit; i++) {
+                tmp[i] = allMovies[allMovies.length - 1 - i];
+            }
+            return tmp;
         }
-        allMovies = tmp;
-        return allMovies;
-    }
 }
